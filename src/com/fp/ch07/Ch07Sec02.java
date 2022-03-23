@@ -19,6 +19,8 @@ public class Ch07Sec02 {
 			.orElse("Name is empty");
 		System.out.println(userName);
 		
+//		Optional<Optional<String>> maybeEmail = Optional.ofNullable(maybeGetUser(true))
+//				.map(User::getEmailAddress);
 		Optional<String> maybeEmail = Optional.ofNullable(maybeGetUser(true))
 				.flatMap(User::getEmailAddress);
 		maybeEmail.ifPresent(System.out::println);
